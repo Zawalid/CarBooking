@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .checked {
+    @apply border-none bg-primary-500 text-white !important;
+  }
+  aside.show {
+    @apply z-10 opacity-100;
+  }
+  #sideBarDropDown.show,
+  #dropDown.show {
+    @apply z-10 h-[309px] border-2 border-border-color pt-4;
+  }
+  #sideBar.show {
+    @apply translate-y-0;
+  }
+  body:has(#sideBar.show) {
+    @apply h-screen overflow-hidden;
+  }
+  body:has(#sideBar.show)::before {
+    @apply z-[2] opacity-100;
+  }
+}
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+aside::-webkit-scrollbar {
+  width: 0.2rem;
+}
+::-webkit-scrollbar-track {
+  @apply bg-white;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-gray-300;
+}
